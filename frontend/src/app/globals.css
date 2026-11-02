@@ -158,3 +158,17 @@ select.petpals-select {
   background: rgba(109, 40, 217, 0.85);
 }
 
+/* ============================================================================
+   PREVENT MOBILE BROWSER (iOS SAFARI / ANDROID) AUTO-ZOOM ON INPUT FOCUS
+   ============================================================================ */
+@media screen and (max-width: 768px) {
+  input,
+  select,
+  textarea,
+  .MuiInputBase-input,
+  .MuiAutocomplete-input {
+    font-size: 16px !important;
+  }
+}
+
+

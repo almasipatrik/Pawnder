@@ -36,7 +36,10 @@ const StyledTextField = styled(TextField)(() => ({
   '& .MuiOutlinedInput-root': {
     borderRadius: '12px',
     backgroundColor: 'rgba(250, 245, 255, 0.75)',
-    fontSize: '11.5px',
+    fontSize: '16px',
+    '@media (min-width: 640px)': {
+      fontSize: '11.5px',
+    },
     fontWeight: 700,
     color: '#231942',
     fontFamily: 'inherit',
@@ -59,7 +62,10 @@ const StyledTextField = styled(TextField)(() => ({
     },
     '& input': {
       padding: '4px 6px',
-      fontSize: '11.5px',
+      fontSize: '16px',
+      '@media (min-width: 640px)': {
+        fontSize: '11.5px',
+      },
       fontWeight: 700,
       color: '#231942',
       fontFamily: 'inherit',
@@ -179,14 +185,18 @@ export default function PawnderAutocomplete({
                 maxHeight: 260,
                 padding: 0,
                 '& .MuiAutocomplete-option': {
-                  fontSize: '11.5px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   borderRadius: '10px',
                   margin: '2px 0',
-                  padding: '6px 10px',
+                  padding: '8px 12px',
                   color: '#231942',
                   fontFamily: 'inherit',
                   transition: 'all 0.12s ease',
+                  '@media (min-width: 640px)': {
+                    fontSize: '11.5px',
+                    padding: '6px 10px',
+                  },
                   '&:hover, &.Mui-focused': {
                     backgroundColor: 'rgba(124, 58, 237, 0.08)',
                     color: '#5b21b6',
