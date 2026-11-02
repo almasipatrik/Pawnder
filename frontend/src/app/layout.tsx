@@ -152,10 +152,10 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Analytics 4 (gtag.js) with Consent Mode v2 */}
+        {/* Google tag (gtag.js) */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZTPGHSG9DN"
         />
         <script
           id="google-tag-gtag"
@@ -163,23 +163,9 @@ export default function RootLayout({
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-
-              var savedConsent = 'denied';
-              try {
-                var stored = localStorage.getItem('pawnder_cookie_consent');
-                if (stored === 'granted') savedConsent = 'granted';
-              } catch(e) {}
-
-              gtag('consent', 'default', {
-                'analytics_storage': savedConsent,
-                'ad_storage': savedConsent,
-                'ad_user_data': savedConsent,
-                'ad_personalization': savedConsent,
-                'wait_for_update': 500
-              });
-
               gtag('js', new Date());
-              gtag('config', '${GA_MEASUREMENT_ID}');
+
+              gtag('config', 'G-ZTPGHSG9DN');
             `,
           }}
         />
