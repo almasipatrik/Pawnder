@@ -87,6 +87,30 @@ export class AnimalsService {
     return false;
   }
 
+  private getAnimalAdmissionTimestamp(item: any): number {
+    if (!item) return 0;
+    const raw =
+      item.admission_date ||
+      item.program_date ||
+      (item.waiting_since && item.waiting_since !== 'Ismeretlen' ? item.waiting_since : '') ||
+      '';
+
+    if (raw) {
+      const clean = String(raw).trim();
+      const direct = new Date(clean).getTime();
+      if (!isNaN(direct) && direct > 0) return direct;
+      const normalized = clean.replace(/\.\s*/g, '-').replace(/-$/, '');
+      const parsedNorm = new Date(normalized).getTime();
+      if (!isNaN(parsedNorm) && parsedNorm > 0) return parsedNorm;
+    }
+
+    if (typeof item.waiting_days === 'number' && item.waiting_days > 0) {
+      return Date.now() - item.waiting_days * 86400000;
+    }
+
+    return 0;
+  }
+
   private computeWaitingInfo(admissionDate?: string, programDate?: string) {
     const rawDate = admissionDate || programDate || '';
     const parsed = rawDate ? new Date(rawDate) : null;
@@ -402,12 +426,14 @@ export class AnimalsService {
       (a) => !a.is_adopted && !this.isLikelyStaleListing(a) && a.is_matched !== false,
     );
 
-    // Sort by highest match percentage, then longest waiting time to help long-waiting shelter pets
+    // Sort by admission date descending (newest admitted pets first), then highest match percent
     filtered.sort((a, b) => {
-      if (b.match_percent !== a.match_percent) {
-        return b.match_percent - a.match_percent;
+      const timeA = this.getAnimalAdmissionTimestamp(a);
+      const timeB = this.getAnimalAdmissionTimestamp(b);
+      if (timeB !== timeA) {
+        return timeB - timeA;
       }
-      return b.waiting_days - a.waiting_days;
+      return (b.match_percent || 0) - (a.match_percent || 0);
     });
 
     // Attach user's existing swipes if authenticated

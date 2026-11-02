@@ -392,3 +392,49 @@ export function enrichAnimalClientSide(
   };
 }
 
+/**
+ * Extracts a comparable timestamp from an animal's admission date, program date,
+ * waiting since string, or fallback waiting days calculation.
+ */
+export function getAnimalAdmissionTimestamp(
+  animal: Partial<AnimalRecord> | null | undefined,
+): number {
+  if (!animal) return 0;
+  const raw =
+    animal.admission_date ||
+    animal.program_date ||
+    (animal.waiting_since && animal.waiting_since !== 'Ismeretlen' ? animal.waiting_since : '') ||
+    '';
+
+  if (raw) {
+    const clean = raw.trim();
+    const direct = new Date(clean).getTime();
+    if (!isNaN(direct) && direct > 0) return direct;
+    const normalized = clean.replace(/\.\s*/g, '-').replace(/-$/, '');
+    const parsedNorm = new Date(normalized).getTime();
+    if (!isNaN(parsedNorm) && parsedNorm > 0) return parsedNorm;
+  }
+
+  if (typeof animal.waiting_days === 'number' && animal.waiting_days > 0) {
+    return Date.now() - animal.waiting_days * 86400000;
+  }
+
+  return 0;
+}
+
+/**
+ * Comparator to sort animals by admission date descending (newest admitted pets first),
+ * falling back to highest match percentage as tie-breaker.
+ */
+export function compareAnimalsByAdmissionDesc(
+  a: AnimalRecord,
+  b: AnimalRecord,
+): number {
+  const timeA = getAnimalAdmissionTimestamp(a);
+  const timeB = getAnimalAdmissionTimestamp(b);
+  if (timeB !== timeA) {
+    return timeB - timeA;
+  }
+  return (b.match_percent || 0) - (a.match_percent || 0);
+}
+

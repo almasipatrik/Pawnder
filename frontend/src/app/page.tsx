@@ -57,6 +57,7 @@ import {
   DEFAULT_FILTERS,
   DROPDOWNS,
   enrichAnimalClientSide,
+  compareAnimalsByAdmissionDesc,
 } from '@/lib/matching';
 import {
   POPULAR_CITIES,
@@ -231,6 +232,7 @@ export default function PawnderApp() {
   }, [filters]);
 
   // Deck of unswiped animals ranked by match % (never includes adopted animals!).
+  // Deck of unswiped animals ranked by admission date descending (newest admitted first).
   // Hard filters (species, breed, age, size, gender, max distance) strictly exclude non-matching animals.
   // min_match_percent cutoff filters out any animal below tolerance threshold.
   // Age & waiting time respects verified species record lifespans (Bluey 29.5y for dogs, Creme Puff 38y for cats).
@@ -247,11 +249,7 @@ export default function PawnderApp() {
             (filters.species === 'mindegy' || !filters.species || a.species === filters.species) &&
             a.match_percent >= (filters.min_match_percent || 0),
         )
-        .sort((a, b) =>
-          b.match_percent !== a.match_percent
-            ? b.match_percent - a.match_percent
-            : b.waiting_days - a.waiting_days,
-        ),
+        .sort(compareAnimalsByAdmissionDesc),
     [animals, swipedMap, filters.min_match_percent, filters.species],
   );
 
@@ -285,6 +283,7 @@ export default function PawnderApp() {
         list.push(allKnown.get(id)!);
       }
     }
+    list.sort(compareAnimalsByAdmissionDesc);
     return list;
   }, [allAnimalsCatalog, localSavedPets, adoptedAnimals, animals, swipedMap]);
 
