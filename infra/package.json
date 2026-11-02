@@ -1,0 +1,28 @@
+{
+  "name": "pawnder-infra",
+  "version": "1.0.0",
+  "description": "AWS CDK Infrastructure for Pawnder (S3 + CloudFront + ACM + Lightsail)",
+  "bin": {
+    "pawnder-infra": "bin/pawnder-app.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy:cert": "cdk deploy PawnderCertificateStack",
+    "deploy:infra": "cdk deploy PawnderInfraStack",
+    "deploy:all": "cdk deploy --all"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "aws-cdk": "^2.170.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.7.2"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.170.0",
+    "constructs": "^10.4.2"
+  }
+}
+

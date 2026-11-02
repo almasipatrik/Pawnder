@@ -1,0 +1,29 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/pawnder-app.ts",
+  "watch": {
+    "include": ["**"],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "yarn.lock",
+      "node_modules",
+      "test"
+    ]
+  },
+  "context": {
+    "domainName": "pawnder.hu",
+    "lightsailRegion": "eu-central-1",
+    "lightsailAvailabilityZone": "eu-central-1a",
+    "lightsailBundleId": "micro_3_0",
+    "lightsailBlueprintId": "ubuntu_24_04",
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": ["aws"],
+    "@aws-cdk-lib/aws-s3:grantWriteWithoutAcl": true
+  }
+}
+

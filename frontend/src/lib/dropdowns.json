@@ -1,0 +1,1626 @@
+{
+  "dogBreeds": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "afgán agár",
+      "label": "afgán agár"
+    },
+    {
+      "value": "agár",
+      "label": "agár"
+    },
+    {
+      "value": "airedale terrier",
+      "label": "airedale terrier"
+    },
+    {
+      "value": "akita",
+      "label": "akita"
+    },
+    {
+      "value": "amerikai bulldog",
+      "label": "amerikai bulldog"
+    },
+    {
+      "value": "amerikai cocker spániel",
+      "label": "amerikai cocker spániel"
+    },
+    {
+      "value": "amerikai pit bull terrier",
+      "label": "amerikai pit bull terrier"
+    },
+    {
+      "value": "angol agár",
+      "label": "angol agár"
+    },
+    {
+      "value": "angol bulldog",
+      "label": "angol bulldog"
+    },
+    {
+      "value": "angol cocker spániel",
+      "label": "angol cocker spániel"
+    },
+    {
+      "value": "angol springer spániel",
+      "label": "angol springer spániel"
+    },
+    {
+      "value": "angol szetter",
+      "label": "angol szetter"
+    },
+    {
+      "value": "angol véreb",
+      "label": "angol véreb"
+    },
+    {
+      "value": "argentin dog",
+      "label": "argentin dog"
+    },
+    {
+      "value": "ausztrál juhászkutya",
+      "label": "ausztrál juhászkutya"
+    },
+    {
+      "value": "ausztrál pásztorkutya",
+      "label": "ausztrál pásztorkutya"
+    },
+    {
+      "value": "ausztrál terrier",
+      "label": "ausztrál terrier"
+    },
+    {
+      "value": "azawakh",
+      "label": "azawakh"
+    },
+    {
+      "value": "bajor hegyi véreb",
+      "label": "bajor hegyi véreb"
+    },
+    {
+      "value": "basenji",
+      "label": "basenji"
+    },
+    {
+      "value": "basset hound",
+      "label": "basset hound"
+    },
+    {
+      "value": "beagle",
+      "label": "beagle"
+    },
+    {
+      "value": "bearded collie",
+      "label": "bearded collie"
+    },
+    {
+      "value": "beauceron",
+      "label": "beauceron"
+    },
+    {
+      "value": "belga griffon",
+      "label": "belga griffon"
+    },
+    {
+      "value": "belga juhászkutya",
+      "label": "belga juhászkutya"
+    },
+    {
+      "value": "bergamói pásztorkutya",
+      "label": "bergamói pásztorkutya"
+    },
+    {
+      "value": "bernáthegyi",
+      "label": "bernáthegyi"
+    },
+    {
+      "value": "berni pásztor",
+      "label": "berni pásztor"
+    },
+    {
+      "value": "bobtail",
+      "label": "bobtail"
+    },
+    {
+      "value": "bolognese",
+      "label": "bolognese"
+    },
+    {
+      "value": "bordeaux-i dog",
+      "label": "bordeaux-i dog"
+    },
+    {
+      "value": "border collie",
+      "label": "border collie"
+    },
+    {
+      "value": "border terrier",
+      "label": "border terrier"
+    },
+    {
+      "value": "Boston terrier",
+      "label": "Boston terrier"
+    },
+    {
+      "value": "boxer",
+      "label": "boxer"
+    },
+    {
+      "value": "briard",
+      "label": "briard"
+    },
+    {
+      "value": "brüsszeli griffon",
+      "label": "brüsszeli griffon"
+    },
+    {
+      "value": "bulldog",
+      "label": "bulldog"
+    },
+    {
+      "value": "bullmasztiff",
+      "label": "bullmasztiff"
+    },
+    {
+      "value": "bull terrier",
+      "label": "bull terrier"
+    },
+    {
+      "value": "cairn terrier",
+      "label": "cairn terrier"
+    },
+    {
+      "value": "cane corso",
+      "label": "cane corso"
+    },
+    {
+      "value": "cocker spániel",
+      "label": "cocker spániel"
+    },
+    {
+      "value": "collie",
+      "label": "collie"
+    },
+    {
+      "value": "csau-csau",
+      "label": "csau-csau"
+    },
+    {
+      "value": "cseh terrier",
+      "label": "cseh terrier"
+    },
+    {
+      "value": "csivava",
+      "label": "csivava"
+    },
+    {
+      "value": "dalmata",
+      "label": "dalmata"
+    },
+    {
+      "value": "dán dog",
+      "label": "dán dog"
+    },
+    {
+      "value": "délorosz juhászkutya",
+      "label": "délorosz juhászkutya"
+    },
+    {
+      "value": "dobermann",
+      "label": "dobermann"
+    },
+    {
+      "value": "erdélyi kopó",
+      "label": "erdélyi kopó"
+    },
+    {
+      "value": "Fila Brasileiro",
+      "label": "Fila Brasileiro"
+    },
+    {
+      "value": "flandriai pásztorkutya",
+      "label": "flandriai pásztorkutya"
+    },
+    {
+      "value": "foxterrier",
+      "label": "foxterrier"
+    },
+    {
+      "value": "francia bulldog",
+      "label": "francia bulldog"
+    },
+    {
+      "value": "golden retriever",
+      "label": "golden retriever"
+    },
+    {
+      "value": "Gordon szetter",
+      "label": "Gordon szetter"
+    },
+    {
+      "value": "groenendael",
+      "label": "groenendael"
+    },
+    {
+      "value": "grönlandi kutya",
+      "label": "grönlandi kutya"
+    },
+    {
+      "value": "hannoveri véreb",
+      "label": "hannoveri véreb"
+    },
+    {
+      "value": "havannai pincs (Havanese)",
+      "label": "havannai pincs (Havanese)"
+    },
+    {
+      "value": "hovawart",
+      "label": "hovawart"
+    },
+    {
+      "value": "husky",
+      "label": "husky"
+    },
+    {
+      "value": "ibizai kopó",
+      "label": "ibizai kopó"
+    },
+    {
+      "value": "ír farkaskutya",
+      "label": "ír farkaskutya"
+    },
+    {
+      "value": "ír szetter",
+      "label": "ír szetter"
+    },
+    {
+      "value": "ír terrier",
+      "label": "ír terrier"
+    },
+    {
+      "value": "Jack Russell terrier",
+      "label": "Jack Russell terrier"
+    },
+    {
+      "value": "jagd terrier",
+      "label": "jagd terrier"
+    },
+    {
+      "value": "japán spániel",
+      "label": "japán spániel"
+    },
+    {
+      "value": "japán spicc",
+      "label": "japán spicc"
+    },
+    {
+      "value": "Kánaán kutya",
+      "label": "Kánaán kutya"
+    },
+    {
+      "value": "kanadai juhász",
+      "label": "kanadai juhász"
+    },
+    {
+      "value": "Kanári-szigeteki kutya",
+      "label": "Kanári-szigeteki kutya"
+    },
+    {
+      "value": "kárpáti juhászkutya",
+      "label": "kárpáti juhászkutya"
+    },
+    {
+      "value": "kaukázusi juhász",
+      "label": "kaukázusi juhász"
+    },
+    {
+      "value": "kelpie",
+      "label": "kelpie"
+    },
+    {
+      "value": "Kerry blue terrier",
+      "label": "Kerry blue terrier"
+    },
+    {
+      "value": "kínai kopaszkutya",
+      "label": "kínai kopaszkutya"
+    },
+    {
+      "value": "kis olasz agár",
+      "label": "kis olasz agár"
+    },
+    {
+      "value": "komondor",
+      "label": "komondor"
+    },
+    {
+      "value": "kopó",
+      "label": "kopó"
+    },
+    {
+      "value": "közép-ázsiai juhász",
+      "label": "közép-ázsiai juhász"
+    },
+    {
+      "value": "közép schnauzer",
+      "label": "közép schnauzer"
+    },
+    {
+      "value": "középuszkár",
+      "label": "középuszkár"
+    },
+    {
+      "value": "kuvasz",
+      "label": "kuvasz"
+    },
+    {
+      "value": "Labrador retriever",
+      "label": "Labrador retriever"
+    },
+    {
+      "value": "laekenois",
+      "label": "laekenois"
+    },
+    {
+      "value": "lajka",
+      "label": "lajka"
+    },
+    {
+      "value": "Lakeland terrier",
+      "label": "Lakeland terrier"
+    },
+    {
+      "value": "Landseer",
+      "label": "Landseer"
+    },
+    {
+      "value": "lengyel alföldi pásztorkutya",
+      "label": "lengyel alföldi pásztorkutya"
+    },
+    {
+      "value": "leonbergi",
+      "label": "leonbergi"
+    },
+    {
+      "value": "lhasa apso",
+      "label": "lhasa apso"
+    },
+    {
+      "value": "magyar agár",
+      "label": "magyar agár"
+    },
+    {
+      "value": "magyar vizsla",
+      "label": "magyar vizsla"
+    },
+    {
+      "value": "malamut",
+      "label": "malamut"
+    },
+    {
+      "value": "malinois",
+      "label": "malinois"
+    },
+    {
+      "value": "mallorcai dog",
+      "label": "mallorcai dog"
+    },
+    {
+      "value": "máltai selyemkutya",
+      "label": "máltai selyemkutya"
+    },
+    {
+      "value": "masztiff",
+      "label": "masztiff"
+    },
+    {
+      "value": "mopsz",
+      "label": "mopsz"
+    },
+    {
+      "value": "moszkvai őrkutya",
+      "label": "moszkvai őrkutya"
+    },
+    {
+      "value": "mudi",
+      "label": "mudi"
+    },
+    {
+      "value": "nápolyi masztiff",
+      "label": "nápolyi masztiff"
+    },
+    {
+      "value": "német dog",
+      "label": "német dog"
+    },
+    {
+      "value": "német juhász",
+      "label": "német juhász"
+    },
+    {
+      "value": "német vizsla",
+      "label": "német vizsla"
+    },
+    {
+      "value": "Norfolk terrier",
+      "label": "Norfolk terrier"
+    },
+    {
+      "value": "ónémet juhász",
+      "label": "ónémet juhász"
+    },
+    {
+      "value": "óriás schnauzer",
+      "label": "óriás schnauzer"
+    },
+    {
+      "value": "óriásuszkár",
+      "label": "óriásuszkár"
+    },
+    {
+      "value": "orosz fekete terrier",
+      "label": "orosz fekete terrier"
+    },
+    {
+      "value": "papillon",
+      "label": "papillon"
+    },
+    {
+      "value": "Parson Russell terrier",
+      "label": "Parson Russell terrier"
+    },
+    {
+      "value": "patterdale terrier",
+      "label": "patterdale terrier"
+    },
+    {
+      "value": "pekingi palotakutya",
+      "label": "pekingi palotakutya"
+    },
+    {
+      "value": "perzsa agár",
+      "label": "perzsa agár"
+    },
+    {
+      "value": "pincser",
+      "label": "pincser"
+    },
+    {
+      "value": "pireneusi hegyikutya",
+      "label": "pireneusi hegyikutya"
+    },
+    {
+      "value": "pireneusi masztiff",
+      "label": "pireneusi masztiff"
+    },
+    {
+      "value": "pointer",
+      "label": "pointer"
+    },
+    {
+      "value": "puli",
+      "label": "puli"
+    },
+    {
+      "value": "pumi",
+      "label": "pumi"
+    },
+    {
+      "value": "rhodesiai ridgeback",
+      "label": "rhodesiai ridgeback"
+    },
+    {
+      "value": "román pásztorkutya",
+      "label": "román pásztorkutya"
+    },
+    {
+      "value": "rottweiler",
+      "label": "rottweiler"
+    },
+    {
+      "value": "sarplaninac",
+      "label": "sarplaninac"
+    },
+    {
+      "value": "schapendoes",
+      "label": "schapendoes"
+    },
+    {
+      "value": "schipperke",
+      "label": "schipperke"
+    },
+    {
+      "value": "schnauzer",
+      "label": "schnauzer"
+    },
+    {
+      "value": "shar pei",
+      "label": "shar pei"
+    },
+    {
+      "value": "shetlandi juhászkutya",
+      "label": "shetlandi juhászkutya"
+    },
+    {
+      "value": "shiba",
+      "label": "shiba"
+    },
+    {
+      "value": "sicu",
+      "label": "sicu"
+    },
+    {
+      "value": "skót juhászkutya",
+      "label": "skót juhászkutya"
+    },
+    {
+      "value": "skót terrier",
+      "label": "skót terrier"
+    },
+    {
+      "value": "Skye terrier",
+      "label": "Skye terrier"
+    },
+    {
+      "value": "spániel",
+      "label": "spániel"
+    },
+    {
+      "value": "spanyol agár",
+      "label": "spanyol agár"
+    },
+    {
+      "value": "spicc",
+      "label": "spicc"
+    },
+    {
+      "value": "Staffordshire terrier",
+      "label": "Staffordshire terrier"
+    },
+    {
+      "value": "svájci fehér juhászkutya",
+      "label": "svájci fehér juhászkutya"
+    },
+    {
+      "value": "szamojéd",
+      "label": "szamojéd"
+    },
+    {
+      "value": "szetter",
+      "label": "szetter"
+    },
+    {
+      "value": "tacskó",
+      "label": "tacskó"
+    },
+    {
+      "value": "terrier",
+      "label": "terrier"
+    },
+    {
+      "value": "tervueren",
+      "label": "tervueren"
+    },
+    {
+      "value": "tibeti masztiff",
+      "label": "tibeti masztiff"
+    },
+    {
+      "value": "tibeti spániel",
+      "label": "tibeti spániel"
+    },
+    {
+      "value": "tibeti terrier",
+      "label": "tibeti terrier"
+    },
+    {
+      "value": "tosa",
+      "label": "tosa"
+    },
+    {
+      "value": "törpe pincser",
+      "label": "törpe pincser"
+    },
+    {
+      "value": "törpe schnauzer",
+      "label": "törpe schnauzer"
+    },
+    {
+      "value": "törpeuszkár",
+      "label": "törpeuszkár"
+    },
+    {
+      "value": "újfundlandi",
+      "label": "újfundlandi"
+    },
+    {
+      "value": "uszkár",
+      "label": "uszkár"
+    },
+    {
+      "value": "véreb",
+      "label": "véreb"
+    },
+    {
+      "value": "vizsla",
+      "label": "vizsla"
+    },
+    {
+      "value": "weimari vizsla",
+      "label": "weimari vizsla"
+    },
+    {
+      "value": "welsh corgi, cardigan",
+      "label": "welsh corgi, cardigan"
+    },
+    {
+      "value": "welsh corgi, pembroke",
+      "label": "welsh corgi, pembroke"
+    },
+    {
+      "value": "welsh terrier",
+      "label": "welsh terrier"
+    },
+    {
+      "value": "West Highland terrier",
+      "label": "West Highland terrier"
+    },
+    {
+      "value": "whippet",
+      "label": "whippet"
+    },
+    {
+      "value": "wolfspitz",
+      "label": "wolfspitz"
+    },
+    {
+      "value": "Yorkshire terrier",
+      "label": "Yorkshire terrier"
+    }
+  ],
+  "catBreeds": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "abesszin",
+      "label": "abesszin"
+    },
+    {
+      "value": "amerikai rövid szőrű",
+      "label": "amerikai rövid szőrű"
+    },
+    {
+      "value": "balinéz",
+      "label": "balinéz"
+    },
+    {
+      "value": "bengáli",
+      "label": "bengáli"
+    },
+    {
+      "value": "birman",
+      "label": "birman"
+    },
+    {
+      "value": "brit rövid szőrű",
+      "label": "brit rövid szőrű"
+    },
+    {
+      "value": "burma",
+      "label": "burma"
+    },
+    {
+      "value": "charteux",
+      "label": "charteux"
+    },
+    {
+      "value": "cymric",
+      "label": "cymric"
+    },
+    {
+      "value": "európai rövid szőrű",
+      "label": "európai rövid szőrű"
+    },
+    {
+      "value": "házi",
+      "label": "házi"
+    },
+    {
+      "value": "himalája",
+      "label": "himalája"
+    },
+    {
+      "value": "japán csonkafarkú",
+      "label": "japán csonkafarkú"
+    },
+    {
+      "value": "keleti macska",
+      "label": "keleti macska"
+    },
+    {
+      "value": "maine coon",
+      "label": "maine coon"
+    },
+    {
+      "value": "man szigeti macska",
+      "label": "man szigeti macska"
+    },
+    {
+      "value": "ocicat",
+      "label": "ocicat"
+    },
+    {
+      "value": "orosz kék",
+      "label": "orosz kék"
+    },
+    {
+      "value": "perzsa",
+      "label": "perzsa"
+    },
+    {
+      "value": "rex cornish",
+      "label": "rex cornish"
+    },
+    {
+      "value": "skót lógófülű",
+      "label": "skót lógófülű"
+    },
+    {
+      "value": "szfinx",
+      "label": "szfinx"
+    },
+    {
+      "value": "sziámi",
+      "label": "sziámi"
+    },
+    {
+      "value": "szingapúri",
+      "label": "szingapúri"
+    },
+    {
+      "value": "török angóra",
+      "label": "török angóra"
+    }
+  ],
+  "genders": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Male",
+      "label": "fiú"
+    },
+    {
+      "value": "Female",
+      "label": "lány"
+    }
+  ],
+  "peopleOk": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Yes",
+      "label": "igen"
+    },
+    {
+      "value": "No",
+      "label": "nem"
+    }
+  ],
+  "sizes": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Small",
+      "label": "kicsi"
+    },
+    {
+      "value": "Medium",
+      "label": "közepes"
+    },
+    {
+      "value": "Large",
+      "label": "nagy"
+    }
+  ],
+  "kidsOk": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Yes",
+      "label": "igen"
+    },
+    {
+      "value": "No",
+      "label": "nem"
+    }
+  ],
+  "housebroken": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Yes",
+      "label": "igen"
+    },
+    {
+      "value": "No",
+      "label": "nem"
+    }
+  ],
+  "malesOk": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Yes",
+      "label": "igen"
+    },
+    {
+      "value": "No",
+      "label": "nem"
+    }
+  ],
+  "keepIn": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Flat",
+      "label": "lakásban"
+    },
+    {
+      "value": "Garden",
+      "label": "kertben"
+    },
+    {
+      "value": "FlatAndGarden",
+      "label": "lakásban és kertben is"
+    }
+  ],
+  "femalesOk": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Yes",
+      "label": "igen"
+    },
+    {
+      "value": "No",
+      "label": "nem"
+    }
+  ],
+  "spayed": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "Yes",
+      "label": "igen"
+    },
+    {
+      "value": "No",
+      "label": "nem"
+    }
+  ],
+  "shelters": [
+    {
+      "value": "Any",
+      "label": "mindegy"
+    },
+    {
+      "value": "28019",
+      "label": "."
+    },
+    {
+      "value": "10340012",
+      "label": "12345"
+    },
+    {
+      "value": "10340018",
+      "label": "Agár Fajtamentés"
+    },
+    {
+      "value": "10340077",
+      "label": "Ajkai Civil Állatvédők"
+    },
+    {
+      "value": "10339970",
+      "label": "Alapítvány az Idős és Sérült Állatokért"
+    },
+    {
+      "value": "10340083",
+      "label": "Alex  Állatvédő Egyesület"
+    },
+    {
+      "value": "27969",
+      "label": "Állatbarát Alapítvány Állatotthona"
+    },
+    {
+      "value": "10339987",
+      "label": "\"Állat és Ember\" Állat- és Természetvédő, Kulturális és Szabadidő Egyesület"
+    },
+    {
+      "value": "28010",
+      "label": "Állat- és Természetvédők Budaörsi Egyesülete"
+    },
+    {
+      "value": "10340105",
+      "label": "Állatmentők Solt"
+    },
+    {
+      "value": "10340101",
+      "label": "Állatmentő Liga"
+    },
+    {
+      "value": "27987",
+      "label": "Állatokat Védjük Együtt Alapítvány-Eger"
+    },
+    {
+      "value": "10339972",
+      "label": "Állatvédők Vasi Egyesülete"
+    },
+    {
+      "value": "10339982",
+      "label": "Amina Állatvédelmi Központ Alapítvány"
+    },
+    {
+      "value": "10340054",
+      "label": "Amstaff Rescue Hungary"
+    },
+    {
+      "value": "10339973",
+      "label": "animal kingdom"
+    },
+    {
+      "value": "27955",
+      "label": "Árvácska Állatbarát Közhasznú Egyesület, Gyömrő"
+    },
+    {
+      "value": "27963",
+      "label": "ASKA (Alpha Segítő Kéz Állatkórházi Alapítvány)"
+    },
+    {
+      "value": "10340044",
+      "label": "Bedea Kata"
+    },
+    {
+      "value": "10340002",
+      "label": "Befogad-lak Állat és Természetvédő Közhasznú Alapítvány"
+    },
+    {
+      "value": "10340107",
+      "label": "Bóbita Állatsegély Alapítvány"
+    },
+    {
+      "value": "10340123",
+      "label": "Bocskaikerti gyepmesteri telep (Debrecen)"
+    },
+    {
+      "value": "27978",
+      "label": "Bogáncs Esztergomi Kutya- És Kisállatotthon Alapítvány"
+    },
+    {
+      "value": "10340081",
+      "label": "Bottyán Equus Hungária Ló- és Kutyaotthon Alapítvány"
+    },
+    {
+      "value": "10340025",
+      "label": "Brit Pásztorkutya Fajtamentés"
+    },
+    {
+      "value": "10340047",
+      "label": "Budadogs"
+    },
+    {
+      "value": "10340055",
+      "label": "Canispro Hungary Állatvédő Alapítvány"
+    },
+    {
+      "value": "28003",
+      "label": "Ceglédi Állatmenhely Nyílt Alapítvány"
+    },
+    {
+      "value": "10339967",
+      "label": "Cicagazdikeresők Társasága"
+    },
+    {
+      "value": "10340070",
+      "label": "Cicatappancs FC"
+    },
+    {
+      "value": "10339979",
+      "label": "Cocker Rocker Spániel Fajtamentő Egyesület"
+    },
+    {
+      "value": "4947911",
+      "label": "Csillagszem Állatvédelmi Alapítvány"
+    },
+    {
+      "value": "10340102",
+      "label": "Csivava Fajtamentő Egyesület"
+    },
+    {
+      "value": "10340103",
+      "label": "CSIVAVA MENTÉS ÉS KÉPZÉS - Cerberos Állatvédő Egyesület"
+    },
+    {
+      "value": "27993",
+      "label": "Csömöri Állatvédő Civil Szervezet"
+    },
+    {
+      "value": "10340057",
+      "label": "Dalmata Mentés"
+    },
+    {
+      "value": "10340000",
+      "label": "Derecskei Állatbarátok Közhasznú Egyesülete"
+    },
+    {
+      "value": "10339954",
+      "label": "Dobbantl-lak Állatvédő Egyesület"
+    },
+    {
+      "value": "10339965",
+      "label": "Dogó mentés"
+    },
+    {
+      "value": "10340063",
+      "label": "Dog World"
+    },
+    {
+      "value": "10340114",
+      "label": "Domus Optima Állatmentő és állatvédő KHE"
+    },
+    {
+      "value": "27975",
+      "label": "Dóra"
+    },
+    {
+      "value": "10339993",
+      "label": "Ebremény Kutyavédő Egyesület"
+    },
+    {
+      "value": "27991",
+      "label": "Együtt az Állatokért Állatvédő Közhasznú Egyesület"
+    },
+    {
+      "value": "4946541",
+      "label": "Emberek Az Állatokért Alapítvány"
+    },
+    {
+      "value": "10339974",
+      "label": "Északbalatoni Ebmentő Egyesület"
+    },
+    {
+      "value": "10340060",
+      "label": "Esztergomi Gyepmesteri Telep"
+    },
+    {
+      "value": "10339985",
+      "label": "Etyeki Állatvédő Egyesület"
+    },
+    {
+      "value": "10340095",
+      "label": "Évike"
+    },
+    {
+      "value": "10340005",
+      "label": "Fehér Állatkommandó"
+    },
+    {
+      "value": "27977",
+      "label": "Fehérkereszt Állatvédő Liga Állatotthon Alapítvány"
+    },
+    {
+      "value": "10340017",
+      "label": "Fekete István Állatvédő Egyesület"
+    },
+    {
+      "value": "10340062",
+      "label": "Foxterrier Fajtamentés"
+    },
+    {
+      "value": "4020047",
+      "label": "FÖRI Állategészségügyi Szolgálat (Illatos út)"
+    },
+    {
+      "value": "27979",
+      "label": "Frakk Várpalota és Környéke Állatvédő Egyesület"
+    },
+    {
+      "value": "4643234",
+      "label": "Futrinka utca Kutyavédő Egyesület"
+    },
+    {
+      "value": "10339956",
+      "label": "Füzesabonyi Állatvédő Alapítvány, Adószám: 18590290-1-10"
+    },
+    {
+      "value": "10340009",
+      "label": "\"Gazdit és Otthont\" Közhasznú Alapítvány"
+    },
+    {
+      "value": "10339981",
+      "label": "Hajdúszoboszlói Kutyabarátok Egyesület"
+    },
+    {
+      "value": "8687096",
+      "label": "Happy Cats - Vidám Cicák Alapítvány, Budapest"
+    },
+    {
+      "value": "10340121",
+      "label": "Harmónia Kutyapanzió"
+    },
+    {
+      "value": "10340100",
+      "label": "Havas Plum"
+    },
+    {
+      "value": "28018",
+      "label": "Herman Ottó Magyar Országos Állat- és Természetvédő Egyesület Budapest"
+    },
+    {
+      "value": "27960",
+      "label": "Herman Ottó Magyar Országos Állat- és Természetvédő Egyesület Székesfehérvári..."
+    },
+    {
+      "value": "10339998",
+      "label": "Herosz és a Fidó Bácsi Közhasznú Alapítvány Kutyamenhelye"
+    },
+    {
+      "value": "10340029",
+      "label": "HEROSZ Gödöllői Szervezete"
+    },
+    {
+      "value": "10340030",
+      "label": "HEROSZ Mohácsi Kutyamenhelye"
+    },
+    {
+      "value": "10340026",
+      "label": "HEROSZ Szentesi Szervezete"
+    },
+    {
+      "value": "10340027",
+      "label": "HEROSZ Szolnoki Szervezete"
+    },
+    {
+      "value": "10340028",
+      "label": "HEROSZ Zala Megyei Szervezete"
+    },
+    {
+      "value": "10340069",
+      "label": "Kalocsai menhely - ÖSSZEFOGÁS AZ ÁLLATOKÉRT KÖZHASZNÚ ALAPÍTVÁNY"
+    },
+    {
+      "value": "10340043",
+      "label": "Karcagi Gyepmesteri Telep"
+    },
+    {
+      "value": "10340082",
+      "label": "Kéz a Mancsért Egyesület"
+    },
+    {
+      "value": "10340036",
+      "label": "Kíra Völgységi Kutyamentő Egyesület - Bonyhád"
+    },
+    {
+      "value": "4946913",
+      "label": "Kisállatmenhely Alapítvány"
+    },
+    {
+      "value": "10340076",
+      "label": "Kisherceg Állatmentő Egyesület"
+    },
+    {
+      "value": "10340007",
+      "label": "Kiskunfélegyházi Gyepmesteri Telep"
+    },
+    {
+      "value": "27984",
+      "label": "KÓBORKA - Biatorbágy és Vidéke Állatvédő Egyesület"
+    },
+    {
+      "value": "10340090",
+      "label": "Kóborka Túri Állatvédők Közhasznú Egyesülete"
+    },
+    {
+      "value": "10340072",
+      "label": "Kóborlók Állatvédelmi Egyesülete"
+    },
+    {
+      "value": "10340115",
+      "label": "Komlói Állatvédő Egyesület"
+    },
+    {
+      "value": "10340086",
+      "label": "Kondorosi Állatvédők"
+    },
+    {
+      "value": "28007",
+      "label": "Konrad Lorenz Természet- és Állatvédő Egyesület, Hódmezővásárhely"
+    },
+    {
+      "value": "10340035",
+      "label": "Kunfalvi Melinda"
+    },
+    {
+      "value": "10340097",
+      "label": "Kunhegyesi Állatvédő Egyesület"
+    },
+    {
+      "value": "10340040",
+      "label": "Kunkarcagi Állatvédő és Állatbarát Egyesület"
+    },
+    {
+      "value": "10340122",
+      "label": "Kunszentmártoni gyepmesteri telep"
+    },
+    {
+      "value": "10340038",
+      "label": "Kunszentmiklósi gyepmesteri telep"
+    },
+    {
+      "value": "10340011",
+      "label": "Kutyabaj  Alapítvány (közhasznú)"
+    },
+    {
+      "value": "10339984",
+      "label": "Kutyamenedékhely Alapítvány"
+    },
+    {
+      "value": "10340098",
+      "label": "Kutyaszív Közhasznú Alapítvány"
+    },
+    {
+      "value": "10340084",
+      "label": "Kutyatár Természet és Állatvédő Egyesület Kaposvár"
+    },
+    {
+      "value": "10339992",
+      "label": "Lakossági bejelentések"
+    },
+    {
+      "value": "10340075",
+      "label": "Láthatatlan Kötelék Alapítvány"
+    },
+    {
+      "value": "10340099",
+      "label": "Léleklánc Állatvédő Alapítvány"
+    },
+    {
+      "value": "28005",
+      "label": "\"Lelenc\" Kutyamentő Egyesület  Budapest"
+    },
+    {
+      "value": "10340108",
+      "label": "Losonci Ágnes"
+    },
+    {
+      "value": "10340058",
+      "label": "Lőrinci Kutyahűség Alapítvány"
+    },
+    {
+      "value": "10340085",
+      "label": "Lunita"
+    },
+    {
+      "value": "10340091",
+      "label": "Macskamentők Alapítvány"
+    },
+    {
+      "value": "10340124",
+      "label": "Magyar Bichon Állatvédő Egyesület"
+    },
+    {
+      "value": "2715209",
+      "label": "MANCS-RANCS Állatmentő Alapítvány"
+    },
+    {
+      "value": "10340051",
+      "label": "Menhely az Állatokért Környezetvédelmi és Állatvédelmi Kiemelkedően Közhasznú..."
+    },
+    {
+      "value": "10340015",
+      "label": "Mentett macskák"
+    },
+    {
+      "value": "10340052",
+      "label": "Mezőhegyesi Állatvédők Egyesülete"
+    },
+    {
+      "value": "10340093",
+      "label": "Mimóza Macskamentő Közhasznú Alapítvány"
+    },
+    {
+      "value": "10340074",
+      "label": "Minimentő Állatvédők Egyesülete"
+    },
+    {
+      "value": "27961",
+      "label": "Miskolci Állatsegítő Alapítvány (M.Á.S.A.)"
+    },
+    {
+      "value": "10340006",
+      "label": "Mudi Fajtamentő Egyesület"
+    },
+    {
+      "value": "10340041",
+      "label": "Nagyatádi Természet és Állatvédő Egyesület"
+    },
+    {
+      "value": "10340016",
+      "label": "Nagyszénási Állatvédő Közhasznú Egyesület"
+    },
+    {
+      "value": "10340117",
+      "label": "Németh Sándor"
+    },
+    {
+      "value": "10339971",
+      "label": "Német Juhászkutya Fajtamentés"
+    },
+    {
+      "value": "10340001",
+      "label": "Noé Állatotthon Alapítvány - Boxer Fajtamentő Csoport"
+    },
+    {
+      "value": "10340061",
+      "label": "Noé Állatotthon Alapítvány - Macskamentés Szilágyi Andrea"
+    },
+    {
+      "value": "10340109",
+      "label": "OLT-alom Állatotthon"
+    },
+    {
+      "value": "27981",
+      "label": "Orosházi Állatmentő Közhasznú Alapítvány"
+    },
+    {
+      "value": "10340068",
+      "label": "Oroszlányi Ebtelep"
+    },
+    {
+      "value": "7977803",
+      "label": "Ózdi gazdikereső"
+    },
+    {
+      "value": "10340089",
+      "label": "Összefogás a Szánhúzókért Közhasznú Alapítvány"
+    },
+    {
+      "value": "10340126",
+      "label": "Összefogás az Állatokért"
+    },
+    {
+      "value": "10340024",
+      "label": "Pacsi Kutyamenhely Alapítvány"
+    },
+    {
+      "value": "10340020",
+      "label": "Pápai Humán Állatvédő Egyesület"
+    },
+    {
+      "value": "28021",
+      "label": "Pest megyei ideiglenes befogadók"
+    },
+    {
+      "value": "10339975",
+      "label": "PET Állat- és Környezetvédelmi (PET-ÁK) Egyesület"
+    },
+    {
+      "value": "10339962",
+      "label": "Pilis-Budai Kutyamentők Közhasznú Egyesülete"
+    },
+    {
+      "value": "10340111",
+      "label": "POLISZ Biztonsági Szolgáltató Kft."
+    },
+    {
+      "value": "10340116",
+      "label": "Pomázi Állatvédő és Állatsegítő Egyesület"
+    },
+    {
+      "value": "27983",
+      "label": "Pomázi Állatvédő és Állatsegítő Egyesület Állatotthona"
+    },
+    {
+      "value": "10340092",
+      "label": "Rácz Henriett"
+    },
+    {
+      "value": "10340033",
+      "label": "Rehab Szolgálat"
+    },
+    {
+      "value": "8305455",
+      "label": "Retriever Rescue Fajtamentő Egyesület"
+    },
+    {
+      "value": "4946672",
+      "label": "Rex Komáromi Állatvédő Egyesület"
+    },
+    {
+      "value": "3811230",
+      "label": "Rex Kutyaotthon Alapítvány"
+    },
+    {
+      "value": "10340113",
+      "label": "Rhodesian Ridgeback fajtamentés"
+    },
+    {
+      "value": "10340104",
+      "label": "Salgótarjáni Önkéntes Állatvédők"
+    },
+    {
+      "value": "10340112",
+      "label": "Segítő Angyalok Állat-és Természetvédő Egyesület"
+    },
+    {
+      "value": "10340019",
+      "label": "\"Segíts, hogy élhessünk\" Állatvédelmi Alapítvány"
+    },
+    {
+      "value": "9671307",
+      "label": "Sirius Állat- és Természetvédelmi Alapítvány"
+    },
+    {
+      "value": "10340106",
+      "label": "SJudith"
+    },
+    {
+      "value": "10340087",
+      "label": "SOS Schnauzer Fajtamentő Egyesület"
+    },
+    {
+      "value": "10340125",
+      "label": "Spitz Fajtamentő Alapítvány"
+    },
+    {
+      "value": "10340118",
+      "label": "Sportkutya Rehabilitációs Egyesület"
+    },
+    {
+      "value": "10340094",
+      "label": "Szarvas Kóbor és Elveszett Kutyáiért Egyesület"
+    },
+    {
+      "value": "10339988",
+      "label": "Százhalombattai Állatvédők Köre Közhasznú Egyesület"
+    },
+    {
+      "value": "28020",
+      "label": "Szentendrei Árvácska Állatvédő Egyesület, Kiemelten Közhasznú Szervezet"
+    },
+    {
+      "value": "10339989",
+      "label": "Szentendrei gyepi"
+    },
+    {
+      "value": "28015",
+      "label": "Szent Ferenc Állatotthon Alapítvány"
+    },
+    {
+      "value": "10340008",
+      "label": "Szentgotthárdi Kutyabarátok Egyesülete"
+    },
+    {
+      "value": "27986",
+      "label": "Szolnok Városi Állatotthon Alapítvány"
+    },
+    {
+      "value": "4946701",
+      "label": "Tappancs Állatotthon Alapítvány, Tatabánya"
+    },
+    {
+      "value": "28017",
+      "label": "Tappancs Állatvédő Alapítvány"
+    },
+    {
+      "value": "10340080",
+      "label": "Tatabányai gyepmesteri telep"
+    },
+    {
+      "value": "10340067",
+      "label": "Tekergők Állatvédő Klub"
+    },
+    {
+      "value": "10340088",
+      "label": "TENKESALJA Állatvédő Egyesület"
+    },
+    {
+      "value": "10340064",
+      "label": "Tiszafüredi gyepmesteri telep"
+    },
+    {
+      "value": "10340096",
+      "label": "TLONA"
+    },
+    {
+      "value": "10340004",
+      "label": "TMonika"
+    },
+    {
+      "value": "27996",
+      "label": "Tolna Megyei Állat- és Természetvédő Alapítvány , Kutyamenhely Szekszárd"
+    },
+    {
+      "value": "10340003",
+      "label": "Tücsök csapata a gazdátlan kutyákért"
+    },
+    {
+      "value": "10340120",
+      "label": "Ürömi menhely"
+    },
+    {
+      "value": "10339999",
+      "label": "Vackoló Állatvédő Egyesület, Veszprém"
+    },
+    {
+      "value": "27966",
+      "label": "Váczikai Cerberus  Alapítvány"
+    },
+    {
+      "value": "27998",
+      "label": "Vahur Állatvédő Egyesület"
+    },
+    {
+      "value": "10340119",
+      "label": "Vakkancs Állatmentő"
+    },
+    {
+      "value": "10340050",
+      "label": "Vermon"
+    },
+    {
+      "value": "10339966",
+      "label": "V. Éva"
+    },
+    {
+      "value": "10340059",
+      "label": "Vidám Mancsok Állatvédő Egyesület"
+    },
+    {
+      "value": "10340032",
+      "label": "Vigyél Haza Alapítvány"
+    },
+    {
+      "value": "10340071",
+      "label": "Westie Rescue Hungary"
+    },
+    {
+      "value": "4926552",
+      "label": "Zemplén Gazdátlan Állataiért Alapítvány"
+    },
+    {
+      "value": "27974",
+      "label": "Zöld Menedék Állatvédő Alapítvány"
+    },
+    {
+      "value": "10340110",
+      "label": "Zöld Menedék Állatvédő Alapítvány Macskamentő Csoport"
+    },
+    {
+      "value": "10339977",
+      "label": "Zöld Zebra Állat- és Természetvédő Egyesület"
+    }
+  ]
+}

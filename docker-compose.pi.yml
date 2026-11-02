@@ -1,0 +1,37 @@
+# ============================================================================
+# Pawnder – Standalone Background Scraper Worker
+# Connects directly to PostgreSQL / AWS RDS to sync shelter dogs & cats
+# (creates new, updates existing, marks removed/adopted animals as
+# is_adopted = true ("Gazdira talált") instead of hard-deleting; stores ONLY image URLs).
+# ============================================================================
+
+services:
+  pawnder-scraper:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.scraper
+    container_name: pawnder-scraper
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      NODE_ENV: production
+      # Direct AWS RDS or local PostgreSQL connection string:
+      DATABASE_URL: ${DATABASE_URL:?Please set DATABASE_URL pointing to your PostgreSQL instance}
+      # Enable TLS/SSL for AWS RDS connections (false for local dev):
+      DATABASE_SSL: ${DATABASE_SSL:-false}
+      DB_SSL: ${DATABASE_SSL:-false}
+      # Number of search pages per species (kutya + macska) to inspect per cycle (0 = all pages):
+      SCRAPER_MAX_PAGES: ${SCRAPER_MAX_PAGES:-25}
+      # Number of existing DB records to verify per cycle for removal/adoption on allatok.info:
+      SCRAPER_VERIFY_REMOVED_BATCH: ${SCRAPER_VERIFY_REMOVED_BATCH:-250}
+      # Sync interval in minutes (default: 240 = every 4 hours):
+      SCRAPER_INTERVAL_MINUTES: ${SCRAPER_INTERVAL_MINUTES:-240}
+      # Set to "true" if triggered externally by host crontab instead of internal daemon loop:
+      SCRAPER_RUN_ONCE: ${SCRAPER_RUN_ONCE:-false}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+

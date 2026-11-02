@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login
+
+Sitemap: https://www.pawnder.hu/sitemap.xml
+

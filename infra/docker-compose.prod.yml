@@ -1,0 +1,73 @@
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-pawnder_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_this_strong_password_in_prod}
+      POSTGRES_DB: ${POSTGRES_DB:-pawnder_prod}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pawnder_admin}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://${POSTGRES_USER:-pawnder_admin}:${POSTGRES_PASSWORD:-change_this_strong_password_in_prod}@postgres:5432/${POSTGRES_DB:-pawnder_prod}
+      DATABASE_SSL: "false"
+      JWT_SECRET: ${JWT_SECRET:-pawnder-production-jwt-secret-replace-me}
+      FRONTEND_URL: ${FRONTEND_URL:-https://pawnder.hu}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      SMTP_FROM: ${SMTP_FROM:-"Pawnder <noreply@pawnder.hu>"}
+      SCRAPER_CRON_ENABLED: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  scraper-worker:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile.scraper
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://${POSTGRES_USER:-pawnder_admin}:${POSTGRES_PASSWORD:-change_this_strong_password_in_prod}@postgres:5432/${POSTGRES_DB:-pawnder_prod}
+      DATABASE_SSL: "false"
+      SCRAPER_MAX_PAGES: 150
+      SCRAPER_VERIFY_REMOVED_BATCH: 150
+      SCRAPER_INTERVAL_MINUTES: 360
+      SCRAPER_RUN_ONCE: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:
+
