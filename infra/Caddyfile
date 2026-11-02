@@ -1,3 +1,7 @@
+pawnder.hu {
+    redir https://www.pawnder.hu{uri} permanent
+}
+
 api.pawnder.hu {
     # Reverse proxy to NestJS backend container
     reverse_proxy backend:3000
