@@ -62,14 +62,6 @@ interface FilterModalProps {
   onApply: (newFilters: FilterState) => void;
   filterTab: 'SEARCH' | 'LOCATION' | 'TRAITS' | string;
   setFilterTab: (tab: any) => void;
-  filterPull: {
-    containerRef: React.RefObject<any>;
-    handleProps: React.HTMLAttributes<HTMLDivElement>;
-    dragY: number;
-    onTouchStart: React.TouchEventHandler;
-    onTouchMove: React.TouchEventHandler;
-    onTouchEnd: React.TouchEventHandler;
-  };
   totalEligibleCount?: number;
   allAnimals?: any[];
   swipedMap?: Record<string, 'left' | 'right'>;
@@ -82,7 +74,6 @@ export default function FilterModal({
   onApply,
   filterTab,
   setFilterTab,
-  filterPull,
   totalEligibleCount,
   allAnimals,
   swipedMap,
@@ -240,45 +231,12 @@ export default function FilterModal({
     <div
       role="dialog"
       aria-modal="true"
-      onClick={onClose}
-      style={{
-        backgroundColor:
-          filterPull.dragY > 0
-            ? `rgba(0, 0, 0, ${Math.max(0.1, 0.55 - (filterPull.dragY / 350) * 0.45)})`
-            : undefined,
-      }}
       className="fixed inset-0 z-50 bg-black/55 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 overflow-hidden"
     >
       <form
         onSubmit={handleSubmit(onSubmit, onInvalid)}
-        ref={filterPull.containerRef}
-        onClick={(e) => e.stopPropagation()}
-        onTouchStart={filterPull.onTouchStart}
-        onTouchMove={filterPull.onTouchMove}
-        onTouchEnd={filterPull.onTouchEnd}
-        style={{
-          transform:
-            filterPull.dragY > 0 ? `translateY(${filterPull.dragY}px)` : undefined,
-          opacity:
-            filterPull.dragY > 0
-              ? Math.max(0.3, 1 - filterPull.dragY / 350)
-              : undefined,
-          transition:
-            filterPull.dragY > 0
-              ? 'none'
-              : 'transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease',
-        }}
-        className="bg-white rounded-[28px] max-w-2xl w-full max-h-[95dvh] p-3.5 sm:p-6 shadow-2xl flex flex-col justify-between gap-2.5 sm:gap-3.5 overflow-hidden overscroll-contain"
+        className="bg-white rounded-[28px] max-w-2xl w-full max-h-[95dvh] p-3.5 sm:p-6 shadow-2xl flex flex-col justify-between gap-2.5 sm:gap-3.5 overflow-hidden overscroll-contain animate-in fade-in zoom-in-95 duration-150"
       >
-        {/* Pull-to-dismiss handle */}
-        <div
-          {...filterPull.handleProps}
-          className="w-full flex justify-center -mt-2 -mb-1 py-1 cursor-grab active:cursor-grabbing touch-none select-none group shrink-0"
-          title="Húzd le a bezáráshoz"
-        >
-          <div className="w-12 h-1.5 bg-purple-200 group-hover:bg-purple-300 group-active:bg-purple-500 rounded-full transition" />
-        </div>
-
         {/* Header */}
         <div className="flex items-center justify-between pb-2 border-b border-purple-100 shrink-0">
           <div>

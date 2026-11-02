@@ -68,93 +68,6 @@ import {
 
 type ActiveTab = 'SWIPE' | 'MATCHES' | 'PROFILE';
 
-function usePullToDismiss(onDismiss: () => void) {
-  const [dragY, setDragY] = useState(0);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const touchStartRef = useRef<{ y: number; atTop: boolean } | null>(null);
-  const isDraggingRef = useRef(false);
-
-  const onTouchStart = useCallback((e: React.TouchEvent) => {
-    const isAtTop = containerRef.current ? containerRef.current.scrollTop <= 0 : true;
-    touchStartRef.current = { y: e.touches[0].clientY, atTop: isAtTop };
-  }, []);
-
-  const onTouchMove = useCallback((e: React.TouchEvent) => {
-    if (!touchStartRef.current || !touchStartRef.current.atTop) return;
-    const dy = e.touches[0].clientY - touchStartRef.current.y;
-    if (dy > 0 && (!containerRef.current || containerRef.current.scrollTop <= 0)) {
-      if (e.cancelable) e.preventDefault();
-      isDraggingRef.current = true;
-      setDragY(dy);
-    } else {
-      if (isDraggingRef.current) {
-        isDraggingRef.current = false;
-        setDragY(0);
-      }
-    }
-  }, []);
-
-  const onTouchEnd = useCallback(() => {
-    if (dragY > 100) {
-      onDismiss();
-    }
-    setDragY(0);
-    isDraggingRef.current = false;
-    touchStartRef.current = null;
-  }, [dragY, onDismiss]);
-
-  const onPointerDown = useCallback((e: React.PointerEvent) => {
-    e.currentTarget.setPointerCapture(e.pointerId);
-    touchStartRef.current = { y: e.clientY, atTop: true };
-    isDraggingRef.current = true;
-  }, []);
-
-  const onPointerMove = useCallback((e: React.PointerEvent) => {
-    if (!isDraggingRef.current || !touchStartRef.current) return;
-    const dy = e.clientY - touchStartRef.current.y;
-    if (dy > 0) {
-      setDragY(dy);
-    } else {
-      setDragY(0);
-    }
-  }, []);
-
-  const onPointerUp = useCallback((e: React.PointerEvent) => {
-    if (isDraggingRef.current) {
-      try {
-        e.currentTarget.releasePointerCapture(e.pointerId);
-      } catch {}
-      if (dragY > 100) {
-        onDismiss();
-      }
-      setDragY(0);
-      isDraggingRef.current = false;
-      touchStartRef.current = null;
-    }
-  }, [dragY, onDismiss]);
-
-  const reset = useCallback(() => {
-    setDragY(0);
-    isDraggingRef.current = false;
-    touchStartRef.current = null;
-  }, []);
-
-  return {
-    dragY,
-    containerRef,
-    onTouchStart,
-    onTouchMove,
-    onTouchEnd,
-    handleProps: {
-      onPointerDown,
-      onPointerMove,
-      onPointerUp,
-      onPointerCancel: onPointerUp,
-    },
-    reset,
-  };
-}
-
 export default function PawnderApp() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('SWIPE');
   const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
@@ -191,23 +104,6 @@ export default function PawnderApp() {
   const [detailPhotoIdx, setDetailPhotoIdx] = useState(0);
   const [detailTab, setDetailTab] = useState<'INFO' | 'STORY' | 'SHELTER'>('INFO');
   const [filterTab, setFilterTab] = useState<'SEARCH' | 'TRAITS' | 'LOCATION'>('SEARCH');
-
-  // Pull-to-dismiss handlers for modals
-  const detailPull = usePullToDismiss(() => setDetailAnimal(null));
-  const filterPull = usePullToDismiss(() => setShowFilterModal(false));
-  const celebrationPull = usePullToDismiss(() => setCelebrationAnimal(null));
-
-  useEffect(() => {
-    if (!detailAnimal) detailPull.reset();
-  }, [detailAnimal, detailPull]);
-
-  useEffect(() => {
-    if (!showFilterModal) filterPull.reset();
-  }, [showFilterModal, filterPull]);
-
-  useEffect(() => {
-    if (!celebrationAnimal) celebrationPull.reset();
-  }, [celebrationAnimal, celebrationPull]);
 
   // Prevent background body scrolling when any modal is open
   useEffect(() => {
@@ -1639,43 +1535,16 @@ export default function PawnderApp() {
         <div
           role="dialog"
           aria-modal="true"
-          onClick={() => setCelebrationAnimal(null)}
-          style={{
-            backgroundColor: celebrationPull.dragY > 0
-              ? `rgba(0, 0, 0, ${Math.max(0.1, 0.55 - (celebrationPull.dragY / 350) * 0.45)})`
-              : undefined,
-          }}
           className="fixed inset-0 z-50 bg-black/55 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-4 overflow-hidden animate-in fade-in duration-200"
         >
           <div
-            ref={celebrationPull.containerRef}
             onClick={(e) => e.stopPropagation()}
-            onTouchStart={celebrationPull.onTouchStart}
-            onTouchMove={celebrationPull.onTouchMove}
-            onTouchEnd={celebrationPull.onTouchEnd}
-            style={{
-              transform: celebrationPull.dragY > 0 ? `translateY(${celebrationPull.dragY}px)` : undefined,
-              opacity: celebrationPull.dragY > 0 ? Math.max(0.3, 1 - celebrationPull.dragY / 350) : undefined,
-              transition: celebrationPull.dragY > 0 ? 'none' : 'transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease',
-            }}
-            className="bg-[#faf7f5] border-2 border-purple-200 rounded-[28px] max-w-md w-full max-h-[95dvh] p-4 sm:p-6 text-center relative shadow-2xl flex flex-col justify-between gap-2 sm:gap-3.5 overflow-hidden overscroll-contain"
+            className="bg-[#faf7f5] border-2 border-purple-200 rounded-[28px] max-w-md w-full max-h-[95dvh] p-4 sm:p-6 text-center relative shadow-2xl flex flex-col justify-between gap-2 sm:gap-3.5 overflow-hidden overscroll-contain animate-in zoom-in-95 duration-150"
           >
-            {/* Pull-to-dismiss handle */}
-            <div
-              {...celebrationPull.handleProps}
-              className="w-full flex justify-center -mt-2 -mb-1 py-1 cursor-grab active:cursor-grabbing touch-none select-none group shrink-0"
-              title="Húzd le a bezáráshoz"
-            >
-              <div className="w-12 h-1.5 bg-purple-200 group-hover:bg-purple-300 group-active:bg-purple-500 rounded-full transition" />
-            </div>
-
             <button
               type="button"
               aria-label="Bezárás"
-              onClick={(e) => {
-                e.stopPropagation();
-                setCelebrationAnimal(null);
-              }}
+              onClick={() => setCelebrationAnimal(null)}
               className="absolute top-3 right-3 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white hover:bg-rose-50 text-gray-600 hover:text-rose-600 border border-purple-200 flex items-center justify-center shadow-sm cursor-pointer transition"
             >
               <X className="w-4 h-4" />
@@ -1812,36 +1681,12 @@ export default function PawnderApp() {
         <div
           role="dialog"
           aria-modal="true"
-          onClick={() => setDetailAnimal(null)}
-          style={{
-            backgroundColor: detailPull.dragY > 0
-              ? `rgba(0, 0, 0, ${Math.max(0.1, 0.6 - (detailPull.dragY / 350) * 0.5)})`
-              : undefined,
-          }}
           className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-4 overflow-hidden"
         >
           <div
-            ref={detailPull.containerRef}
             onClick={(e) => e.stopPropagation()}
-            onTouchStart={detailPull.onTouchStart}
-            onTouchMove={detailPull.onTouchMove}
-            onTouchEnd={detailPull.onTouchEnd}
-            style={{
-              transform: detailPull.dragY > 0 ? `translateY(${detailPull.dragY}px)` : undefined,
-              opacity: detailPull.dragY > 0 ? Math.max(0.3, 1 - detailPull.dragY / 350) : undefined,
-              transition: detailPull.dragY > 0 ? 'none' : 'transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease',
-            }}
-            className="bg-white rounded-[32px] max-w-2xl w-full max-h-[92dvh] overflow-y-auto custom-scrollbar p-4 sm:p-6 relative shadow-2xl space-y-4 my-auto overscroll-contain"
+            className="bg-white rounded-[32px] max-w-2xl w-full max-h-[92dvh] overflow-y-auto custom-scrollbar p-4 sm:p-6 relative shadow-2xl space-y-4 my-auto overscroll-contain animate-in fade-in zoom-in-95 duration-150"
           >
-            {/* Pull-to-dismiss handle */}
-            <div
-              {...detailPull.handleProps}
-              className="w-full flex justify-center -mt-2 -mb-2 py-2 cursor-grab active:cursor-grabbing touch-none select-none group"
-              title="Húzd le a bezáráshoz"
-            >
-              <div className="w-12 h-1.5 bg-purple-200 group-hover:bg-purple-300 group-active:bg-purple-500 rounded-full transition" />
-            </div>
-
             {/* Header (Non-sticky: scrolls naturally with the datasheet) */}
             <div className="flex items-start justify-between gap-2 pb-3 border-b border-purple-100">
               <div className="min-w-0 pr-2">
@@ -2257,7 +2102,6 @@ export default function PawnderApp() {
         onApply={handleApplyFilters}
         filterTab={filterTab}
         setFilterTab={setFilterTab}
-        filterPull={filterPull}
         totalEligibleCount={unswipedAnimals.length}
         allAnimals={allAnimalsCatalog.length > 0 ? allAnimalsCatalog : animals}
         swipedMap={swipedMap}
