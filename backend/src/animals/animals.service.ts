@@ -80,7 +80,7 @@ export class AnimalsService {
     const maxAge = isCat
       ? AnimalsService.MAX_PLAUSIBLE_CAT_AGE_YEARS
       : AnimalsService.MAX_PLAUSIBLE_DOG_AGE_YEARS;
-    const maxWaitingDays = (isCat ? 38 : 29.5) * 365;
+    const maxWaitingDays = 2 * 365; // Max 2 év (730 nap) gondozásban
 
     if (Number(a.age_years ?? 0) > maxAge) return true;
     if (Number(a.waiting_days ?? 0) > maxWaitingDays) return true;

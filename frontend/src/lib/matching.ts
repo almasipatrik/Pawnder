@@ -194,6 +194,11 @@ export function enrichAnimalClientSide(
   // 1. HARD CRITERIA FILTERING (Categorical exclusions)
   let isMatched = true;
 
+  // Max 1-2 éve (730 napja) gondozásba vett állatok szűrése
+  if (days > 2 * 365) {
+    isMatched = false;
+  }
+
   // Species (hard filter: if user wants dogs, only dogs; if cats, only cats)
   if (filters.species && filters.species !== 'mindegy') {
     if (raw.species !== filters.species) isMatched = false;

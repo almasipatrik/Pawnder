@@ -119,9 +119,11 @@ export class ScraperService {
   public static readonly MAX_PLAUSIBLE_CAT_AGE_YEARS = 38.0;
 
   /**
-   * Plausible lifespan verification before saving animals into database:
-   * Only reject listings that exceed documented species lifespan limits (29.5 years for dogs, 38 years for cats).
+   * Only save animals that were taken into care at most 1-2 years ago (max 2 years / 730 days)
+   * and do not exceed species lifespan limits (29.5 years for dogs, 38 years for cats).
    */
+  public static readonly MAX_WAITING_DAYS = 2 * 365;
+
   public static isLikelyStaleListing(record: {
     species?: string;
     age_years?: number;
@@ -132,20 +134,18 @@ export class ScraperService {
     const maxAge = isCat
       ? ScraperService.MAX_PLAUSIBLE_CAT_AGE_YEARS
       : ScraperService.MAX_PLAUSIBLE_DOG_AGE_YEARS;
-    const maxWaitingYears = isCat
-      ? ScraperService.MAX_PLAUSIBLE_CAT_AGE_YEARS
-      : ScraperService.MAX_PLAUSIBLE_DOG_AGE_YEARS;
 
     if (Number(record.age_years ?? 0) > maxAge) {
       return true;
     }
     const rawDate = record.admission_date || record.program_date;
     if (rawDate) {
-      const parsed = new Date(rawDate);
+      const clean = rawDate.replace(/\.\s*/g, '-').replace(/-$/, '').trim();
+      const parsed = new Date(clean);
       if (!isNaN(parsed.getTime())) {
         const diffMs = Date.now() - parsed.getTime();
         const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-        if (days > maxWaitingYears * 365) {
+        if (days > ScraperService.MAX_WAITING_DAYS) {
           return true;
         }
       }
@@ -588,10 +588,10 @@ export class ScraperService {
             );
             if (!parsed) continue;
 
-            // Do not save listings exceeding verified species lifespans (dog > 29.5y, cat > 38y)
+            // Only keep animals taken into care within the last 1-2 years (max 730 days) and valid age
             if (ScraperService.isLikelyStaleListing(parsed)) {
               this.logger.log(
-                `Kihagyva fajrekordot meghaladó életkorú állat #${extId} (${parsed.name}, faj: ${parsed.species}, kor: ${parsed.age_years} év, bekerült: ${parsed.admission_date}) - nem kerül mentésre.`,
+                `Kihagyva 2 évnél régebben bekerült vagy inaktív állat #${extId} (${parsed.name}, faj: ${parsed.species}, bekerült: ${parsed.admission_date}) - nem kerül mentésre.`,
               );
               if (existingSet.has(extId)) {
                 await this.db.deleteFrom('animals').where('external_id', '=', extId).execute();
@@ -674,6 +674,31 @@ export class ScraperService {
           } catch (itemErr: any) {
             this.logger.warn(`Failed to scrape animal #${extId}: ${itemErr?.message}`);
           }
+        }
+
+        // Clean up any animals admitted more than 2 years ago (730 days)
+        try {
+          const twoYearsAgo = new Date();
+          twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+          const twoYearsCutoff = twoYearsAgo.toISOString().slice(0, 10);
+
+          const pruneRes = await this.db
+            .deleteFrom('animals')
+            .where((eb) =>
+              eb.or([
+                eb('admission_date', '<', twoYearsCutoff),
+                eb('program_date', '<', twoYearsCutoff),
+              ]),
+            )
+            .executeTakeFirst();
+          if (pruneRes?.numDeletedRows && Number(pruneRes.numDeletedRows) > 0) {
+            deletedCount += Number(pruneRes.numDeletedRows);
+            this.logger.log(
+              `Sync takarítás: ${pruneRes.numDeletedRows} db 2 évnél régebbi állat törölve az adatbázisból.`,
+            );
+          }
+        } catch (pruneErr: any) {
+          this.logger.warn(`Sync karbantartási figyelmeztetés: ${pruneErr?.message}`);
         }
 
         if (runId) {

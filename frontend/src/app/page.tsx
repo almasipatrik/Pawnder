@@ -235,7 +235,7 @@ export default function PawnderApp() {
   // Deck of unswiped animals ranked by admission date descending (newest admitted first).
   // Hard filters (species, breed, age, size, gender, max distance) strictly exclude non-matching animals.
   // min_match_percent cutoff filters out any animal below tolerance threshold.
-  // Age & waiting time respects verified species record lifespans (Bluey 29.5y for dogs, Creme Puff 38y for cats).
+  // Only shows animals admitted within the last 1-2 years (max 730 waiting days).
   const unswipedAnimals = useMemo(
     () =>
       animals
@@ -245,7 +245,7 @@ export default function PawnderApp() {
             !swipedMap[a.external_id] &&
             a.is_matched !== false &&
             (a.age_years === undefined || a.age_years <= 40) &&
-            (a.waiting_days === undefined || a.waiting_days <= 40 * 365) &&
+            (a.waiting_days === undefined || a.waiting_days <= 2 * 365) &&
             (filters.species === 'mindegy' || !filters.species || a.species === filters.species) &&
             a.match_percent >= (filters.min_match_percent || 0),
         )

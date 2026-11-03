@@ -245,38 +245,27 @@ export class DbModule implements OnModuleInit {
       DbModule.isConnected = true;
       this.logger.log('PostgreSQL database schema verified/initialized successfully.');
 
-      // Tisztítás a hitelesített fajrekordok alapján:
-      // 🐶 Kutya: Bluey (29 év 5 hónap -> 29,5 év)
-      // 🐱 Macska: Creme Puff (38 év 3 nap -> 38 év)
-      const dogYearsAgo = new Date();
-      dogYearsAgo.setFullYear(dogYearsAgo.getFullYear() - 30);
-      const dogCutoff = dogYearsAgo.toISOString().slice(0, 10);
-
-      const catYearsAgo = new Date();
-      catYearsAgo.setFullYear(catYearsAgo.getFullYear() - 38);
-      const catCutoff = catYearsAgo.toISOString().slice(0, 10);
+      // Tisztítás: csak a max 1-2 éve (730 napja) gondozásba vett állatok maradhatnak
+      const twoYearsAgo = new Date();
+      twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+      const twoYearsCutoff = twoYearsAgo.toISOString().slice(0, 10);
 
       const staleDeleteRes = await this.db
         .deleteFrom('animals')
         .where((eb) =>
           eb.or([
-            // Kutyák életkor/várakozási korlátja (29,5 év)
+            // Max 2 évnél régebben bekerült állatok törlése
+            eb('admission_date', '<', twoYearsCutoff),
+            eb('program_date', '<', twoYearsCutoff),
+            // Kutyák életkor korlátja (29,5 év)
             eb.and([
               eb('species', '=', 'kutya'),
-              eb.or([
-                eb('age_years', '>', 29.5),
-                eb('admission_date', '<', dogCutoff),
-                eb('program_date', '<', dogCutoff),
-              ]),
+              eb('age_years', '>', 29.5),
             ]),
-            // Macskák életkor/várakozási korlátja (38 év)
+            // Macskák életkor korlátja (38 év)
             eb.and([
               eb('species', '=', 'macska'),
-              eb.or([
-                eb('age_years', '>', 38),
-                eb('admission_date', '<', catCutoff),
-                eb('program_date', '<', catCutoff),
-              ]),
+              eb('age_years', '>', 38),
             ]),
             // Ismeretlen fajta esetén maximum 38 év
             eb('age_years', '>', 38),
